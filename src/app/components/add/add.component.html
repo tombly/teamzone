@@ -1,0 +1,31 @@
+<div class="flex-container">
+    <mat-card class="box" style="min-width: 200px;">
+        <mat-card-header>
+            <mat-card-title>Add Member</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="addForm" (ngSubmit)="addForm.valid && onSubmit()" style="text-align: center;">
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name" id="name" required>
+
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <div *ngIf="name.errors?.required">
+                            Name is required.
+                        </div>
+                    </div>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Time Zone</mat-label>
+                    <mat-select formControlName="timeZone" id=time-zone required>
+                        <mat-option *ngFor="let tz of timeZones" [value]="tz">{{tz}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <button mat-flat-button color="accent">Add</button>
+                <button type="button" mat-flat-button color="link" (click)="onCancel()">Cancel</button>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

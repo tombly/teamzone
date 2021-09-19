@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <div class="title">TeamZone</div>
+    <span class="spacer"></span>
+    <button mat-button [routerLink]="['/add']">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button mat-button (click)="onReset()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</mat-toolbar>
+<router-outlet></router-outlet>

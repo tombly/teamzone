@@ -1,0 +1,18 @@
+<div class="flex-container">
+    <mat-card class="box" style="min-width: 200px;">
+        <mat-card-content>
+            <div *ngFor="let row of rows">
+                <div id="container">
+                    <div class="members-date">
+                        <span class="members-list-hour">{{row.hour}}</span>
+                        <span class="members-list-minute">:{{row.minute}}</span>
+                        <span class="members-list-ampm">
+                            {{row.ampm}}                    
+                        </span>
+                    </div>
+                    <div class="members-name">{{row.name}}</div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
